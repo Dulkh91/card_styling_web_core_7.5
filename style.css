@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: #F8F8F8;
+}
+.titles{
+ background: linear-gradient(to right, #F8F8F8, #FFFF);
+}
+.titles__text{
+    margin: 15px 20px;
+    padding: 20px 0;
+}
+.titles__text h1{
+    color: #7E7E82;
+    font-size: 1rem;
+}
+
+.card{
+    width: 240px;
+    height: 72px;
+    display: flex;
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 15px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 5px;
+    transform: translateY(20px); /* Start below */
+    transition: all 0.3s ease-out; /* Smooth transition */
+}
+.card.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide up */
+}
+.card img{
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+.card__circle{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FF3E79;
+    color: #FF3E79;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 15px;
+    
+}
+.pageNation{
+    display: none;
+}
+.page__item:first-child{
+    background-color: #B5B6BC;
+}
+.page__item{
+    width: 15px;
+    height: 15px;
+    background-color: #DDDDDD;
+    border-radius: 100%;
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    width: 100%;
+    gap: 2rem;
+    padding: 10px;
+    margin: 0 15px;
+   
+}
+.btnToggle{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 1rem;
+    color: #1B1C21;
+    border: none;
+    background: none;
+}
+.btnToggle__row{
+    color: #41F6D7;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+.btnToggle__row span{
+    font-size: 20px;
+    height: 20px;
+}
+
+@media only screen and (max-width: 767px){
+    /* Card mobile */
+    .cards{
+        display: flex;
+        margin: 15px;
+        gap: 24px;
+        padding: 20px 15px;
+        overflow: auto;
+        scrollbar-width: none;
+    }
+    .cards::-webkit-scrollbar{
+        display: none; /*Safari */
+    }
+    .pageNation{
+        margin-top: 20px;
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .btnToggle{
+        display: none;
+    }
+    
+}
+
