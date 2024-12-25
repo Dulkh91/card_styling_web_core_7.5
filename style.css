@@ -7,16 +7,29 @@ body{
     font-family: "Roboto", sans-serif;
     background-color: #F8F8F8;
 }
+
 .titles{
  background: linear-gradient(to right, #F8F8F8, #FFFF);
 }
 .titles__text{
     margin: 15px 20px;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 .titles__text h1{
     color: #7E7E82;
     font-size: 1rem;
+}
+/* Card Desktop */
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, auto);
+    width: 100%;
+    gap: 2rem;
+    margin: 0 20px;
+    padding-bottom: 35px;
+    transition: all 0.3s ease-in-out;
 }
 
 .card{
@@ -71,16 +84,23 @@ body{
 }
 
 
-.cards{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
-    width: 100%;
-    gap: 2rem;
-    padding: 10px;
-    margin: 0 15px;
-   
+
+.addCard {
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .btnToggle{
     display: flex;
     gap: 10px;
@@ -102,29 +122,27 @@ body{
     height: 20px;
 }
 
+
 @media only screen and (max-width: 767px){
-    /* Card mobile */
-    .cards{
-        display: flex;
-        margin: 15px;
-        gap: 24px;
-        padding: 20px 15px;
-        overflow: auto;
-        scrollbar-width: none;
-    }
-    .cards::-webkit-scrollbar{
-        display: none; /*Safari */
-    }
+   .swiper-pagination{
+    position: static !important;
+   }
+   .cards{
+    padding: 0;
+    gap: 0;
+   }
+   .swiper-slide{
+    margin: 0;
+    padding: 0;
+   }
     .pageNation{
-        margin-top: 20px;
-        margin: 15px;
+        margin-top: 45px;
         display: flex;
         justify-content: center;
-        gap: 10px;
     }
     .btnToggle{
         display: none;
     }
-    
+        
 }
 
