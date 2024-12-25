@@ -67,7 +67,8 @@ function widthOfScreen() {
         },
       });
     }
-  } else {
+  }else{
+    
     cards.classList.remove("swiper-wrapper");
     card.forEach((item) => item.classList.remove("swiper-slide"));
 
